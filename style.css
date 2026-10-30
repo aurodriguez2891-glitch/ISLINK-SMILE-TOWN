@@ -1,7 +1,7 @@
 .imagem-topo {
   display: block;
-  margin: 0 auto;        /* Centraliza a imagem no fluxo normal da página */
-  max-width: 250px;      /* Controla o tamanho ideal para não cobrir outros elementos */
+  margin: 20px auto;     /* Centraliza a imagem e dá um espaçamento em cima/baixo */
+  max-width: 250px;      /* Controla o tamanho ideal para o topo */
   height: auto;
 }
 
