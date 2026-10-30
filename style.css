@@ -1,4 +1,10 @@
-
+.imagem-topo {
+  display: block;
+  margin: 20px auto;     /* Centraliza na tela */
+  max-width: 450px;      /* Aumente se quiser ainda maior (ex: 500px, 600px) */
+  width: 100%;           /* Garante que fique responsivo no celular */
+  height: auto;          /* Mantém a proporção original sem esticar */
+}
 
 body {
   background-image: url('bgprincipal.jpg');
@@ -7,6 +13,9 @@ body {
   color: #ffffff; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;    /* ADICIONADO: Centraliza textos e logos por padrão */
+  margin: 0;
+  padding: 20px;
 }
 
 h1 {
@@ -14,6 +23,7 @@ h1 {
   text-shadow: 3px 3px 0px #000000, 5px 5px 0px rgba(0, 0, 0, 0.5);
   font-size: 2.5rem;
 }
+
 h3 {
   color: #00ffff; /* Azul ciano vibrante estilo anos 90 */
   text-shadow: 2px 2px 0px #000;
@@ -24,6 +34,7 @@ p {
   font-weight: bold;
   text-shadow: 2px 2px 3px #000; /* Sombra preta bem definida */
   max-width: 800px; /* Evita que o texto fique esticado de fora a fora */
+  margin: 0 auto 20px auto; /* AJUSTADO: Centraliza o bloco do parágrafo na tela */
 }
 
 .barra-personagens {
@@ -33,4 +44,5 @@ p {
   background-repeat: repeat-x;     
   background-size: auto 100%;    
   background-color: transparent; /* Deixa transparente para mostrar as nuvens ao fundo */
+  margin-top: 30px;
 }
