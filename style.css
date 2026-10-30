@@ -1,9 +1,4 @@
-.imagem-topo {
-  display: block;
-  margin: 20px auto;     /* Centraliza a imagem e dá um espaçamento em cima/baixo */
-  max-width: 250px;      /* Controla o tamanho ideal para o topo */
-  height: auto;
-}
+
 
 body {
   background-image: url('bgprincipal.jpg');
