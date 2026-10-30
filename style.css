@@ -1,10 +1,8 @@
 .imagem-topo {
-  position: fixed;       /* Fica fixa na tela mesmo se o utilizador fizer scroll */
-  top: 50%;              /* Move para o meio exato da altura */
-  left: 50%;             /* Move para o meio exato da largura */
-  transform: translate(-50%, -50%); /* Centraliza perfeitamente o eixo da imagem */
-  z-index: 9999;         /* Garante que fica acima de absolutamente tudo no site */
-  pointer-events: none;  /* (Opcional) Se quiseres que os cliques atravessem a imagem como se ela não estivesse lá */
+  display: block;
+  margin: 0 auto;        /* Centraliza a imagem no fluxo normal da página */
+  max-width: 250px;      /* Controla o tamanho ideal para não cobrir outros elementos */
+  height: auto;
 }
 
 body {
@@ -21,12 +19,23 @@ h1 {
   text-shadow: 3px 3px 0px #000000, 5px 5px 0px rgba(0, 0, 0, 0.5);
   font-size: 2.5rem;
 }
+h3 {
+  color: #00ffff; /* Azul ciano vibrante estilo anos 90 */
+  text-shadow: 2px 2px 0px #000;
+}
+
+p {
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px #000; /* Sombra preta bem definida */
+  max-width: 800px; /* Evita que o texto fique esticado de fora a fora */
+}
 
 .barra-personagens {
   width: 100%;                
   height: 120px;             
-  background-image: url(casas.png); 
+  background-image: url('casas.png'); 
   background-repeat: repeat-x;     
   background-size: auto 100%;    
-  background-color: blue;         
+  background-color: transparent; /* Deixa transparente para mostrar as nuvens ao fundo */
 }
