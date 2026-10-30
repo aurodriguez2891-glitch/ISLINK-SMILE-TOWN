@@ -1,10 +1,12 @@
 .imagem-topo {
-  position: fixed;       /* Fica fixa na tela mesmo se o utilizador fizer scroll */
-  top: 50%;              /* Move para o meio exato da altura */
-  left: 50%;             /* Move para o meio exato da largura */
-  transform: translate(-50%, -50%); /* Centraliza perfeitamente o eixo da imagem */
-  z-index: 9999;         /* Garante que fica acima de absolutamente tudo no site */
-  pointer-events: none;  /* (Opcional) Se quiseres que os cliques atravessem a imagem como se ela não estivesse lá */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  
+  width: 50%; 
+  height: auto; 
 }
 
 body {
