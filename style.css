@@ -32,9 +32,15 @@ h3 {
 p {
   color: #ffffff;
   font-weight: bold;
+<<<<<<< HEAD
   text-shadow: 2px 2px 3px #000;
   max-width: 800px;
   margin: 0 auto 20px auto; 
+=======
+  text-shadow: 2px 2px 3px #000; /* Sombra preta bem definida */
+  max-width: 800px; /* Evita que o texto fique esticado de fora a fora */
+  margin: 0 auto 20px auto; /* AJUSTADO: Centraliza o bloco do parágrafo na tela */
+>>>>>>> d41448bfd0a45e1b1d8cb40711dd928495d113aa
 }
 
 .barra-personagens {
@@ -43,6 +49,10 @@ p {
   background-image: url('casas.png'); 
   background-repeat: repeat-x;     
   background-size: auto 100%;    
+<<<<<<< HEAD
   background-color: transparent; 
+=======
+  background-color: transparent; /* Deixa transparente para mostrar as nuvens ao fundo */
+>>>>>>> d41448bfd0a45e1b1d8cb40711dd928495d113aa
   margin-top: 30px;
 }
