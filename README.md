@@ -14,3 +14,9 @@ Quais quer atualizações eu postarei aqui:
 +IMAGEM TITULO DO SLINKY.
 +APRESENTAÇÃO DO SLINKY.
 +RECRUTAMENTO.
+
+31 de outubro de 2001: Feliz halloween! Eu estava sem criatividade para personagens, por isso, deixei  que adicionem seus proprios como amigos do Slinky!
+Agora, ele não esta mais sozinho, que felicidade, né?
+Em breve, vamos ver o encontro destes!
+
++FIM DO RECRUTAMENTO (por enquanto).
