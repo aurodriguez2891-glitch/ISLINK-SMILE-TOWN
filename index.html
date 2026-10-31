@@ -28,7 +28,7 @@
             border: 1px solid #444;
             background-color: #222;
             color: #fff;
-            width: 300px;
+            width: 350px;
             margin-right: 10px;
         }
 
@@ -71,8 +71,8 @@
 <body>
 
     <div class="container">
-        <h2>Insere a frase secreta (6 palavras):</h2>
-        <input type="text" id="inputPalavras" placeholder="palavra1 palavra2 palavra3...">
+        <h2>Insere a frase secreta:</h2>
+        <input type="text" id="inputPalavras" placeholder="Digita as 6 palavras aqui...">
         <button onclick="verificarPalavras()">Verificar</button>
         <p id="mensagem-erro"></p>
 
@@ -87,22 +87,23 @@
 
     <script>
         function verificarPalavras() {
-            // Define aqui as tuas 6 palavras secretas exatas (em minúsculas para facilitar)
-            const fraseSecreta = "palavra um dois tres quatro cinco";
+            // Frase secreta exata em minúsculas
+            const fraseSecreta = "amigos companheiros sorriam até sangrar inteiro";
 
-            // Pega no que o utilizador escreveu, retira espaços extras e passa para minúsculas
+            // Normaliza o que o jogador digitou (remove espaços nas pontas e passa para minúsculas)
             const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
             const elementoSecreto = document.getElementById("conteudo-secreto");
             const mensagemErro = document.getElementById("mensagem-erro");
 
-            // Compara o texto digitado com a frase secreta
+            // Verifica se a frase digitada corresponde exatamente à frase secreta
             if (inputUser === fraseSecreta) {
-                elementoSecreto.style.display = "block"; // Mostra a imagem e o link
+                elementoSecreto.style.display = "block"; // Revela a imagem e o link
                 mensagemErro.textContent = "Parabéns! Desbloqueaste o segredo!";
                 mensagemErro.style.color = "#55ff55";
             } else {
                 elementoSecreto.style.display = "none"; // Mantém escondido
                 mensagemErro.textContent = "Palavras incorretas. Tenta novamente!";
+                mensagemErro.style.color = "#ff5555";
             }
         }
     </script>
