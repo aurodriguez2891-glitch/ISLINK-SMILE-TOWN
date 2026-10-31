@@ -6,6 +6,48 @@
     <title>Nas memorias dela</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="placa (1) (1).jpg">
+    <style>
+        /* Estilo subtil e integrado para fazer parte da página */
+        .bloco-secreto {
+            margin: 30px 0;
+            text-align: left; /* Ou center, dependendo do teu style.css */
+        }
+        .bloco-secreto input {
+            padding: 8px 12px;
+            font-size: 14px;
+            background: transparent;
+            border: 1px solid #666;
+            color: #fff;
+            width: 320px;
+            max-width: 100%;
+            margin-right: 8px;
+        }
+        .bloco-secreto button {
+            padding: 8px 16px;
+            font-size: 14px;
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            cursor: pointer;
+        }
+        .bloco-secreto button:hover {
+            background: #444;
+        }
+        #conteudo-secreto {
+            display: none;
+            margin-top: 15px;
+        }
+        #conteudo-secreto img {
+            width: 200px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #mensagem-status {
+            font-size: 14px;
+            margin-top: 8px;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
     <img src="SLINKYTOWN.png" alt="Logo ou Destaque" class="imagem-topo">
@@ -25,15 +67,46 @@
 
     <h3>Perdido e não sabe pra onde ir? MELEIA. My Dear!</h3>
 
-     <h1>MEUS AMIGOS, CHEGARAM!</h1>
+    <!-- BLOCO SECRETO INTEGRADO NO FLUXO DA PÁGINA -->
+    <div class="bloco-secreto">
+        <p>Insira a frase secreta:</p>
+        <input type="text" id="inputPalavras" placeholder="...">
+        <button onclick="verificarPalavras()">Enviar</button>
+        <p id="mensagem-status"></p>
 
- 
+        <!-- IMAGEM E LINK QUE APARECEM SÓ DEPOIS DE ACERTAR -->
+        <div id="conteudo-secreto">
+            <a href="https://www.oseusiteaqui.com" target="_blank">
+                <img src="URL_DA_TUA_IMAGEM_AQUI.jpg" alt="Porta Secreta">
+            </a>
+        </div>
+    </div>
+
+    <h1>MEUS AMIGOS, CHEGARAM!</h1>
     
     <div class="barra-personagens"></div>
 
     <img src="FUNTELL-removebg-preview (1).png" alt="Funtell">
 
     <!-- Secção do Google Drive para submissão de artes -->
-    
+
+    <script>
+        function verificarPalavras() {
+            const fraseSecreta = "amigos companheiros sorriam até sangrar inteiro";
+            const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
+            const elementoSecreto = document.getElementById("conteudo-secreto");
+            const mensagemStatus = document.getElementById("mensagem-status");
+
+            if (inputUser === fraseSecreta) {
+                elementoSecreto.style.display = "block";
+                mensagemStatus.textContent = "Acesso concedido.";
+                mensagemStatus.style.color = "#8f8";
+            } else {
+                elementoSecreto.style.display = "none";
+                mensagemStatus.textContent = "Nada aconteceu...";
+                mensagemStatus.style.color = "#888";
+            }
+        }
+    </script>
 </body>
 </html>
