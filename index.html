@@ -1,140 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Meu Site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Conteúdo principal do site no topo/meio */
-        .conteudo-principal {
-            flex: 1;
-            padding: 40px;
-            text-align: center;
-        }
-
-        h1 {
-            color: #fff;
-        }
-
-        /* Rodapé onde fica o código secreto */
-        footer {
-            background-color: #1a1a1a;
-            padding: 30px;
-            text-align: center;
-            border-top: 1px solid #333;
-            margin-top: auto;
-        }
-
-        input {
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #444;
-            background-color: #222;
-            color: #fff;
-            width: 350px;
-            margin-right: 10px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #ff0000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #cc0000;
-        }
-
-        /* A IMAGEM SECRETA COMEÇA ESCONDIDA */
-        #conteudo-secreto {
-            display: none;
-            margin-top: 20px;
-        }
-
-        #conteudo-secreto img {
-            width: 250px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        #conteudo-secreto img:hover {
-            transform: scale(1.05);
-        }
-
-        #mensagem-erro {
-            color: #ff5555;
-            margin-top: 10px;
-        }
-    </style>
+    <title>Nas memorias dela</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="placa (1) (1).jpg">
 </head>
 <body>
+    <img src="SLINKYTOWN.png" alt="Logo ou Destaque" class="imagem-topo">
+    
+    <h1>SORRIA, ISLINKY!</h1>
+    
+    <h3>Quem é Slinky?</h3>
+    <p>Slinky é o seu melhor amigo e criador de Smile Town! 
+        Divertido, engraçado e protetor, Slinky cresceu com sempre um sorriso incrível em seu rosto. 
+        Porém, Slinky tem uma grande cidade, mas nenhum habitante, ele procura novos amigos a cada dia, mas sem sucesso. 
+        Infelizmente, ele se encontra agora em um plano vazio, então, ele tem uma proposta pra você!
+    </p>
+    
+    <h3>Crie você mesmo o amigo de Slinky, diga sua personalidade e faça com que ele viva junto com Slinky em Smile Town, em troca, ele te dará acesso à porta secreta!</h3>
+    
+    <img src="page1.jpg" alt="O fim antes do inicio.">
 
-    <!-- CONTEÚDO PRINCIPAL DO SITE (Visível logo no início) -->
-    <div class="conteudo-principal">
-        <h1>Bem-vindo ao meu site!</h1>
-        <p>Explora o conteúdo principal por aqui...</p>
-    </div>
+    <h3>Perdido e não sabe pra onde ir? MELEIA. My Dear!</h3>
 
-    <!-- FINAL DA PÁGINA / RODAPÉ: ONDE FICA O CÓDIGO SECRETO -->
-    <footer>
-        <p style="color: #666; font-size: 14px;">Procurando por algo escondido?</p>
-        
-        <div class="container-secreto">
-            <input type="text" id="inputPalavras" placeholder="Insere a frase secreta...">
-            <button onclick="verificarPalavras()">Verificar</button>
-            <p id="mensagem-erro"></p>
+     <h1>MEUS AMIGOS, CHEGARAM!</h1>
 
-            <!-- IMAGEM E LINK QUE APARECEM APÓS ACERTAR A SENHA -->
-            <div id="conteudo-secreto">
-                <!-- Substitui "https://www.oseusiteaqui.com" pelo teu link final -->
-                <a href="https://www.oseusiteaqui.com" target="_blank">
-                    <!-- Substitui "URL_DA_TUA_IMAGEM_AQUI.jpg" pelo caminho da tua imagem -->
-                    <img src="URL_DA_TUA_IMAGEM_AQUI.jpg" alt="Aceder ao Link Secreto">
-                </a>
-                <p><a href="https://aurodriguez2891-glitch.github.io/ISLINK-SMILE-TOWN/" target="_blank" style="color: #ff4444; text-decoration: none;">Clica aqui para abrir o link!</a></p>
-            </div>
-        </div>
-    </footer>
+ 
+    
+    <div class="barra-personagens"></div>
 
-    <script>
-        function verificarPalavras() {
-            // Frase exata exigida na ordem correta
-            const fraseSecreta = "amigos companheiros sorriam até sangrar inteiro";
+    <img src="FUNTELL-removebg-preview (1).png" alt="Funtell">
 
-            // Normaliza o texto inserido (retira espaços extras e converte para minúsculas)
-            const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
-            const elementoSecreto = document.getElementById("conteudo-secreto");
-            const mensagemErro = document.getElementById("mensagem-erro");
-
-            // Validação
-            if (inputUser === fraseSecreta) {
-                elementoSecreto.style.display = "block"; // Revela a imagem e o link
-                mensagemErro.textContent = ":)";
-                mensagemErro.style.color = "#55ff55";
-            } else {
-                elementoSecreto.style.display = "none"; // Mantém escondido
-                mensagemErro.textContent = ":(";
-                mensagemErro.style.color = "#ff5555";
-            }
-        }
-    </script>
-
+    <!-- Secção do Google Drive para submissão de artes -->
+    
 </body>
 </html>
