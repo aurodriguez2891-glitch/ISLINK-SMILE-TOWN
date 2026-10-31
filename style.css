@@ -32,9 +32,9 @@ h3 {
 p {
   color: #ffffff;
   font-weight: bold;
-  text-shadow: 2px 2px 3px #000; /* Sombra preta bem definida */
-  max-width: 800px; /* Evita que o texto fique esticado de fora a fora */
-  margin: 0 auto 20px auto; /* AJUSTADO: Centraliza o bloco do parágrafo na tela */
+  text-shadow: 2px 2px 3px #000;
+  max-width: 800px;
+  margin: 0 auto 20px auto; 
 }
 
 .barra-personagens {
@@ -43,6 +43,6 @@ p {
   background-image: url('casas.png'); 
   background-repeat: repeat-x;     
   background-size: auto 100%;    
-  background-color: transparent; /* Deixa transparente para mostrar as nuvens ao fundo */
+  background-color: transparent; 
   margin-top: 30px;
 }
