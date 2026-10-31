@@ -1,39 +1,111 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nas memorias dela</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="placa (1) (1).jpg">
+    <title>Desbloquear Segredo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #222;
+            color: #fff;
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #cc0000;
+        }
+
+        /* A IMAGEM COMEÇA ESCONDIDA */
+        #conteudo-secreto {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #conteudo-secreto img {
+            width: 250px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        #conteudo-secreto img:hover {
+            transform: scale(1.05);
+        }
+
+        #mensagem-erro {
+            color: #ff5555;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <img src="SLINKYTOWN.png" alt="Logo ou Destaque" class="imagem-topo">
-    
-    <h1>SORRIA, ISLINKY!</h1>
-    
-    <h3>Quem é Slinky?</h3>
-    <p>Slinky é o seu melhor amigo e criador de Smile Town! 
-        Divertido, engraçado e protetor, Slinky cresceu com sempre um sorriso incrível em seu rosto. 
-        Porém, Slinky tem uma grande cidade, mas nenhum habitante, ele procura novos amigos a cada dia, mas sem sucesso. 
-        Infelizmente, ele se encontra agora em um plano vazio, então, ele tem uma proposta pra você!
-    </p>
-    
-    <h3>Crie você mesmo o amigo de Slinky, diga sua personalidade e faça com que ele viva junto com Slinky em Smile Town, em troca, ele te dará acesso à porta secreta!</h3>
-    
-    <img src="page1.jpg" alt="O fim antes do inicio.">
 
-    <h3>Perdido e não sabe pra onde ir? MELEIA. My Dear!</h3>
+    <div class="container">
+        <h2>Insere a frase secreta (6 palavras):</h2>
+        <input type="text" id="inputPalavras" placeholder="palavra1 palavra2 palavra3...">
+        <button onclick="verificarPalavras()">Verificar</button>
+        <p id="mensagem-erro"></p>
 
-     <h1>MEUS AMIGOS, CHEGARAM!</h1>
+        <!-- IMAGEM E LINK DO YOUTUBE (Escondidos inicialmente) -->
+        <div id="conteudo-secreto">
+            <a href="https://www.youtube.com/watch?v=O_O_TEU_LINK_AQUI" target="_blank">
+                <img src="URL_DA_TUA_IMAGEM_AQUI.jpg" alt="Conteúdo Secreto do YouTube">
+            </a>
+            <p><a href="https://www.youtube.com/watch?v=O_O_TEU_LINK_AQUI" target="_blank" style="color: #ff4444;">Clica aqui para ver o vídeo no YouTube!</a></p>
+        </div>
+    </div>
 
- 
-    
-    <div class="barra-personagens"></div>
+    <script>
+        function verificarPalavras() {
+            // Define aqui as tuas 6 palavras secretas exatas (em minúsculas para facilitar)
+            const fraseSecreta = "palavra um dois tres quatro cinco";
 
-    <img src="FUNTELL-removebg-preview (1).png" alt="Funtell">
+            // Pega no que o utilizador escreveu, retira espaços extras e passa para minúsculas
+            const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
+            const elementoSecreto = document.getElementById("conteudo-secreto");
+            const mensagemErro = document.getElementById("mensagem-erro");
 
-    <!-- Secção do Google Drive para submissão de artes -->
-    
+            // Compara o texto digitado com a frase secreta
+            if (inputUser === fraseSecreta) {
+                elementoSecreto.style.display = "block"; // Mostra a imagem e o link
+                mensagemErro.textContent = "Parabéns! Desbloqueaste o segredo!";
+                mensagemErro.style.color = "#55ff55";
+            } else {
+                elementoSecreto.style.display = "none"; // Mantém escondido
+                mensagemErro.textContent = "Palavras incorretas. Tenta novamente!";
+            }
+        }
+    </script>
+
 </body>
 </html>
