@@ -52,6 +52,4 @@ comecem do inicio após a forca!
 a primeira palavra selecionada. :(
 vocês são IgNORANTES!
 
-"g"!
-
-
+"g"!, PARABENS, RIGBY!
