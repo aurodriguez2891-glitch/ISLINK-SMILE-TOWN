@@ -73,3 +73,5 @@ qual é o nivel de inteligencia de vocês?
 *voce tem 1 chances, digam com numeros.*
 
 entre 0 e 10?
+
+0.
