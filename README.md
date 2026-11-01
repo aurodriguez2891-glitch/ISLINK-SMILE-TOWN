@@ -71,3 +71,5 @@ qual é o nivel de inteligencia de vocês?
 7, errado.
 
 *voce tem 1 chances, digam com numeros.*
+
+entre 0 e 10?
