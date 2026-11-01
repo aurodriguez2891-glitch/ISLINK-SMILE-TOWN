@@ -24,3 +24,4 @@ Em breve, vamos ver o encontro destes!
 JOGO DA FORCA!
 
 OQUE VEM DEPOIS DO E?
+OQUE VEM DEPOIS DO F?
