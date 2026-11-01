@@ -20,3 +20,7 @@ Agora, ele não esta mais sozinho, que felicidade, né?
 Em breve, vamos ver o encontro destes!
 
 +FIM DO RECRUTAMENTO (por enquanto).
+
+JOGO DA FORCA!
+
+OQUE VEM DEPOIS DO E?
