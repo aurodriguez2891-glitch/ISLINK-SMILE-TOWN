@@ -26,8 +26,8 @@ JOGO DA FORCA!
 OQUE VEM DEPOIS DO E?
 OQUE VEM DEPOIS DO F?
 
-G
+"G"
 
 Qual nome do objeto que decide sua sorte?
 
-d de DADO
+"d" de DADO
