@@ -53,3 +53,5 @@ a primeira palavra selecionada. :(
 vocês são IgNORANTES!
 
 "g"!, PARABENS, RIGBY!
+
+OQUE VEM DEPOIS DO V? OQUE VEM DEPOIS DO Y? OQUE VEM DEPOIS DO A?
