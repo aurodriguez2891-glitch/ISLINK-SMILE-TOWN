@@ -62,3 +62,12 @@ para finalizar..
 qual é o nivel de inteligencia de vocês?
 
 *voces tem 3 chances, digam com numeros.*
+
+6, errado.
+
+*voce tem 2 chances, digam com nuimeros.*
+
+
+7, errado.
+
+*voce tem 1 chances, digam com nuimeros.*
