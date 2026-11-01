@@ -34,3 +34,7 @@ Qual nome do objeto que decide sua sorte?
 
 Como você grita?
 IMITE.
+
+A
+
+oque você faz após um enterro?
