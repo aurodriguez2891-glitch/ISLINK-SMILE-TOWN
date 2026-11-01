@@ -35,6 +35,10 @@ Qual nome do objeto que decide sua sorte?
 Como você grita?
 IMITE.
 
-A
+"A"
 
 oque você faz após um enterro?
+
+Luto!
+
+"L"
