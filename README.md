@@ -57,3 +57,6 @@ vocês são IgNORANTES!
 OQUE VEM DEPOIS DO V? OQUE VEM DEPOIS DO Y? OQUE VEM DEPOIS DO A?
 
 WZB, parabens!
+
+para finalizar..
+qual é o nivel de inteligencia de vocês?
