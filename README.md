@@ -42,3 +42,5 @@ oque você faz após um enterro?
 Luto!
 
 "L"
+
+qual o inicio do numero da besta?
