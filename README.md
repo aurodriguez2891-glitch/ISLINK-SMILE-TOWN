@@ -31,3 +31,5 @@ OQUE VEM DEPOIS DO F?
 Qual nome do objeto que decide sua sorte?
 
 "d" de DADO
+
+Como você grita?
