@@ -50,3 +50,4 @@ qual o inicio do numero da besta?
 volte a primeira palavra e diminua assim como você faz a si mesmo.
 comecem do inicio após a forca!
 a primeira palavra selecionada. :(
+vocês são IgNORANTES!
