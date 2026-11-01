@@ -77,4 +77,4 @@ entre 0 e 10?
 "0", a ignorancia de vocês responde.
 
 vocês tem a chave! se virem.
-GdALJ6gWZB0
+
