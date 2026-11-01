@@ -75,3 +75,5 @@ qual é o nivel de inteligencia de vocês?
 entre 0 e 10?
 
 0, a ignorancia de vocês responde.
+
+vocês tem a chave! se virem.
