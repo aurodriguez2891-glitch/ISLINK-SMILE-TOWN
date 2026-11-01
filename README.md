@@ -65,9 +65,9 @@ qual é o nivel de inteligencia de vocês?
 
 6, errado.
 
-*voce tem 2 chances, digam com nuimeros.*
+*voce tem 2 chances, digam com numeros.*
 
 
 7, errado.
 
-*voce tem 1 chances, digam com nuimeros.*
+*voce tem 1 chances, digam com numeros.*
