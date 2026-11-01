@@ -25,3 +25,7 @@ JOGO DA FORCA!
 
 OQUE VEM DEPOIS DO E?
 OQUE VEM DEPOIS DO F?
+
+G
+
+Qual nome do objeto que decide sua sorte?
