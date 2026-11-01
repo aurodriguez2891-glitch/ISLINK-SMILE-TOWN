@@ -48,3 +48,4 @@ qual o inicio do numero da besta?
 6
 
 volte a primeira palavra e diminua assim como você faz a si mesmo.
+comecem do inicio após a forca!
