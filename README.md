@@ -45,7 +45,7 @@ Luto!
 
 qual o inicio do numero da besta?
 
-6
+"6"
 
 volte a primeira palavra e diminua assim como você faz a si mesmo.
 comecem do inicio após a forca!
@@ -56,7 +56,7 @@ vocês são IgNORANTES!
 
 OQUE VEM DEPOIS DO V? OQUE VEM DEPOIS DO Y? OQUE VEM DEPOIS DO A?
 
-WZB, parabens!
+"WZB", parabens!
 
 para finalizar..
 qual é o nivel de inteligencia de vocês?
@@ -74,6 +74,6 @@ qual é o nivel de inteligencia de vocês?
 
 entre 0 e 10?
 
-0, a ignorancia de vocês responde.
+"0", a ignorancia de vocês responde.
 
 vocês tem a chave! se virem.
