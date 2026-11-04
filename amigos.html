@@ -11,6 +11,7 @@
             padding: 0;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -19,8 +20,20 @@
             cursor: pointer;
         }
 
+        #start-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: monospace;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+            z-index: 10000;
+        }
+
         #jumpscare-container {
-            display: flex;
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -63,6 +76,8 @@
 </head>
 <body>
 
+    <button id="start-btn">CLIQUE PARA ACESSAR AS MEMÓRIAS</button>
+
     <div id="jumpscare-container">
         <img id="jumpscare-img" class="scare-effect" src="aindanao.png" alt="Jumpscare">
     </div>
@@ -70,38 +85,33 @@
     <audio id="scare-sound" src="SMILEDOG.mp3" preload="auto" loop></audio>
 
     <script>
+        const btn = document.getElementById('start-btn');
+        const container = document.getElementById('jumpscare-container');
         const sound = document.getElementById('scare-sound');
 
         function triggerPrank() {
-            // Toca o áudio
+            btn.style.display = 'none';
+            container.style.display = 'flex';
+
             sound.volume = 1.0;
             sound.play().catch(err => console.log(err));
 
-            // Abre várias abas/janelas em sequência rápida para zoar
-            let windowsOpened = 0;
-            const maxWindows = 15; // Quantidade de abas para abrir (cuidado para não travar totalmente o PC deles kkkk)
+            // Dispara várias janelas espalhadas pela tela de uma só vez
+            let totalJanelas = 12; // Podes aumentar se quiseres (cuidado para não travar o PC deles)
             
-            const spamInterval = setInterval(() => {
-                if (windowsOpened >= maxWindows) {
-                    clearInterval(spamInterval);
-                    return;
-                }
-                // Abre a própria página em novas janelas com posições e tamanhos aleatórios para espalhar pelo ecrã
-                const randomX = Math.floor(Math.random() * window.screen.width / 2);
-                const randomY = Math.floor(Math.random() * window.screen.height / 2);
-                window.open(window.location.href, '_blank', `width=500,height=400,left=${randomX},top=${randomY}`);
-                windowsOpened++;
-            }, 150); // Abre uma nova aba a cada 150 milissegundos
+            for (let i = 0; i < totalJanelas; i++) {
+                setTimeout(() => {
+                    const randomX = Math.floor(Math.random() * (window.screen.width - 500));
+                    const randomY = Math.floor(Math.random() * (window.screen.height - 400));
+                    const largura = 400 + Math.floor(Math.random() * 200);
+                    const altura = 300 + Math.floor(Math.random() * 200);
+                    
+                    window.open(window.location.href, '_blank', `width=${largura},height=${altura},left=${randomX},top=${randomY}`);
+                }, i * 50); // Abre uma rajada quase instantânea com 50ms de diferença entre cada uma
+            }
         }
 
-        // Dispara assim que a página carrega ou no primeiro clique
-        window.addEventListener('DOMContentLoaded', () => {
-            triggerPrank();
-        });
-
-        document.body.addEventListener('click', () => {
-            triggerPrank();
-        }, { once: true });
+        btn.addEventListener('click', triggerPrank);
     </script>
 </body>
 </html>
