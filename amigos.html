@@ -1,12 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amigos</title>
+    <title>Nas Memórias Dela</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            font-family: monospace;
+        }
+
+        /* Container do Jumpscare (Escondido por padrão) */
+        #jumpscare-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Imagem do Jumpscare */
+        #jumpscare-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Animação de piscar e tremer/pular */
+        .scare-effect {
+            animation: flash-and-shake 0.1s infinite alternate;
+        }
+
+        @keyframes flash-and-shake {
+            0% {
+                opacity: 1;
+                transform: scale(1) translate(0, 0);
+                filter: invert(0%);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.15) translate(-10px, 10px);
+                filter: invert(30%);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.25) translate(10px, -10px);
+                filter: invert(100%);
+            }
+        }
+    </style>
 </head>
 <body>
-  
-    
+
+    <!-- Conteúdo normal do site para distrair a pessoa -->
+    <div id="content">
+        <p>Carregando arquivos da memória...</p>
+        <p style="color: #444;">(Clique em qualquer lugar para interagir)</p>
+    </div>
+
+    <!-- Elementos do Jumpscare -->
+    <div id="jumpscare-container">
+        <img id="jumpscare-img" src="aindanao.png" alt="Jumpscare">
+    </div>
+
+    <!-- Áudio do grito/susto -->
+    <audio id="scare-sound" src="SEU_AUDIO_AQUI.mp3" preload="auto"></audio>
+
+    <script>
+        const container = document.getElementById('jumpscare-container');
+        const img = document.getElementById('jumpscare-img');
+        const sound = document.getElementById('scare-sound');
+
+        function triggerJumpscare() {
+            // Exibe a tela cheia do susto
+            container.style.display = 'flex';
+            
+            // Adiciona a animação de piscar e tremer
+            img.classList.add('scare-effect');
+
+            // Toca o som alto
+            sound.volume = 1.0;
+            sound.play().catch(err => console.log("O navegador bloqueou o áudio automático:", err));
+
+            // Opcional: Esconde o susto depois de 2.5 segundos
+            setTimeout(() => {
+                container.style.display = 'none';
+                img.classList.remove('scare-effect');
+            }, 2500);
+        }
+
+        // Os navegadores modernos bloqueiam sons automáticos sem interação do usuário.
+        // O susto é ativado no primeiro clique do usuário ou após 3 segundos se ele já interagiu.
+        document.body.addEventListener('click', () => {
+            triggerJumpscare();
+        }, { once: true }); // Executa apenas uma vez
+    </script>
 </body>
 </html>
