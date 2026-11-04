@@ -90,23 +90,27 @@
         const sound = document.getElementById('scare-sound');
 
         function triggerPrank() {
-            // Esconde o botão e mostra o susto
             btn.style.display = 'none';
             container.style.display = 'flex';
 
-            // Toca o som
             sound.volume = 1.0;
             sound.play().catch(err => console.log(err));
 
-            // Tenta abrir várias janelas em um loop rápido no mesmo evento de clique
-            for (let i = 0; i < 10; i++) {
-                const randomX = Math.floor(Math.random() * (screen.width - 400));
-                const randomY = Math.floor(Math.random() * (screen.height - 300));
-                window.open(window.location.href, '_blank', `width=400,height=300,left=${randomX},top=${randomY}`);
+            // Dispara várias janelas espalhadas pela tela de uma só vez
+            let totalJanelas = 12; // Podes aumentar se quiseres (cuidado para não travar o PC deles)
+            
+            for (let i = 0; i < totalJanelas; i++) {
+                setTimeout(() => {
+                    const randomX = Math.floor(Math.random() * (window.screen.width - 500));
+                    const randomY = Math.floor(Math.random() * (window.screen.height - 400));
+                    const largura = 400 + Math.floor(Math.random() * 200);
+                    const altura = 300 + Math.floor(Math.random() * 200);
+                    
+                    window.open(window.location.href, '_blank', `width=${largura},height=${altura},left=${randomX},top=${randomY}`);
+                }, i * 50); // Abre uma rajada quase instantânea com 50ms de diferença entre cada uma
             }
         }
 
-        // Exige o clique no botão para liberar as janelas e o áudio no navegador
         btn.addEventListener('click', triggerPrank);
     </script>
 </body>
