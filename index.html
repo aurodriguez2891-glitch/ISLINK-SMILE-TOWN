@@ -11,6 +11,7 @@
             padding: 0;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -19,8 +20,20 @@
             cursor: pointer;
         }
 
+        #start-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: monospace;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+            z-index: 10000;
+        }
+
         #jumpscare-container {
-            display: flex;
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -63,6 +76,8 @@
 </head>
 <body>
 
+    <button id="start-btn">CLIQUE PARA ACESSAR AS MEMÓRIAS</button>
+
     <div id="jumpscare-container">
         <img id="jumpscare-img" class="scare-effect" src="aindanao.png" alt="Jumpscare">
     </div>
@@ -70,15 +85,29 @@
     <audio id="scare-sound" src="SMILEDOG.mp3" preload="auto" loop></audio>
 
     <script>
+        const btn = document.getElementById('start-btn');
+        const container = document.getElementById('jumpscare-container');
         const sound = document.getElementById('scare-sound');
 
-        function startAudio() {
+        function triggerPrank() {
+            // Esconde o botão e mostra o susto
+            btn.style.display = 'none';
+            container.style.display = 'flex';
+
+            // Toca o som
             sound.volume = 1.0;
             sound.play().catch(err => console.log(err));
+
+            // Tenta abrir várias janelas em um loop rápido no mesmo evento de clique
+            for (let i = 0; i < 10; i++) {
+                const randomX = Math.floor(Math.random() * (screen.width - 400));
+                const randomY = Math.floor(Math.random() * (screen.height - 300));
+                window.open(window.location.href, '_blank', `width=400,height=300,left=${randomX},top=${randomY}`);
+            }
         }
 
-        window.addEventListener('DOMContentLoaded', startAudio);
-        document.body.addEventListener('click', startAudio, { once: true });
+        // Exige o clique no botão para liberar as janelas e o áudio no navegador
+        btn.addEventListener('click', triggerPrank);
     </script>
 </body>
 </html>
