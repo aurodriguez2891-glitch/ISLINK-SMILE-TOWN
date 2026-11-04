@@ -6,7 +6,7 @@ Ele so fez isso uma vez, e nesta, eu me encantei, eu me apaixonei por ele, sempr
 Cachorros sabem oque o sorriso significa? eles tem a capacidade de sorrir?
 
 Eu, como uma garotinha desde sempre que amava desenhar, tive o sonho de criar meu proprio negocio artistico, eu queria uma serie animada, uma serie para crianças que estrelava o Slinky.
-Eu quero mostrar ao mundo oque ele me mostrou, o poder que um sorriso tem nas pessoas, portanto, quando meu projeto ja estava com um bom escopo, a FUNMATTEL adquiriu os direitos de imagem da minha serie "Sorria, Slinky!", aceitaram por ele no ar caso eu fizesse site e esboços de como ficaria os episodios.
+Eu quero mostrar ao mundo oque ele me mostrou, o poder que um sorriso tem nas pessoas, portanto, quando meu projeto ja estava com um bom escopo, a FUNTTEL adquiriu os direitos de imagem da minha serie "Sorria, Slinky!", aceitaram por ele no ar caso eu fizesse site e esboços de como ficaria os episodios.
 
 Quais quer atualizações eu postarei aqui:
 
