@@ -45,7 +45,7 @@
             background: #444;
         }
 
-        #conteudo-secreto, #conteudo-porta {
+        #conteudo-secreto {
             display: none;
             margin-top: 15px;
         }
@@ -54,23 +54,6 @@
             width: 200px;
             border-radius: 5px;
             cursor: pointer;
-        }
-
-        /* Estilo para o botão de download do .exe */
-        .botao-download {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #8f8;
-            color: #0b0b0b;
-            text-decoration: none;
-            font-family: monospace;
-            font-weight: bold;
-            border: 1px solid #5f5;
-            transition: background 0.2s;
-        }
-
-        .botao-download:hover {
-            background-color: #6d6;
         }
 
         #mensagem-status {
@@ -111,17 +94,10 @@
         <button onclick="verificarPalavras()">Enviar</button>
         <p id="mensagem-status"></p>
 
-        <!-- CONTEÚDO SECRETO 1: Se digitar "bem vindo" -->
+        <!-- LINK COM A IMAGEM (Aparece se digitar "bem vindo") -->
         <div id="conteudo-secreto">
             <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
                 <img src="bemali.png" alt="Porta Secreta">
-            </a>
-        </div>
-
-        <!-- CONTEÚDO SECRETO 2: Se digitar "porta" (Botão de download do .exe) -->
-        <div id="conteudo-porta">
-            <a href="SLINKYHOUSE.exe" download class="botao-download">
-                📥 Instalar SLINKYHOUSE.exe
             </a>
         </div>
     </div>
@@ -133,22 +109,21 @@
         function verificarPalavras() {
             const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
             const elementoSecreto = document.getElementById("conteudo-secreto");
-            const elementoPorta = document.getElementById("conteudo-porta");
             const mensagemStatus = document.getElementById("mensagem-status");
 
-            // Esconde ambos os conteúdos por padrão ao submeter uma nova tentativa
+            // Esconde a imagem por padrão antes de checar a palavra
             elementoSecreto.style.display = "none";
-            elementoPorta.style.display = "none";
 
             if (inputUser === "bem vindo") {
+                // Mostra o link com a imagem na tela
                 elementoSecreto.style.display = "block";
                 mensagemStatus.textContent = ":)";
                 mensagemStatus.style.color = "#8f8";
             } else if (inputUser === "porta") {
-                elementoPorta.style.display = "block";
-                mensagemStatus.textContent = "ACESSO LIBERADO.";
-                mensagemStatus.style.color = "#8f8";
+                // Redireciona diretamente para a página secreta do site
+                window.location.href = "https://aurodriguez2891-glitch.github.io/ISLINK-SMILE-TOWN/PORTA.txt";
             } else {
+                // Mensagem de erro caso erre a palavra
                 mensagemStatus.textContent = ":(";
                 mensagemStatus.style.color = "#888";
             }
