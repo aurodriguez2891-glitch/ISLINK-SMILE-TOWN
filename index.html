@@ -99,7 +99,11 @@
             <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
                 <img src="bemali.png" alt="Porta Secreta">
             </a>
-        </div>
+
+             <div id="conteudo-secreto1">
+            <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
+                <img src="bemali.png" alt="Porta Secreta">
+            </a>       
     </div>
     
     <br>
@@ -107,10 +111,26 @@
 
     <script>
         function verificarPalavras() {
-            const fraseSecreta = "bem vindo";
+            const fraseSecreta = "BEM VINDO";
             const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
             const elementoSecreto = document.getElementById("conteudo-secreto");
             const mensagemStatus = document.getElementById("mensagem-status");
+
+            if (inputUser === fraseSecreta) {
+                elementoSecreto.style.display = "block";
+                mensagemStatus.textContent = ":)";
+                mensagemStatus.style.color = "#8f8";
+            } else {
+                elementoSecreto.style.display = "none";
+                mensagemStatus.textContent = ":(";
+                mensagemStatus.style.color = "#888";
+            }
+
+              function verificarPalavras() {
+            const fraseSecreta = "PORTA";
+            const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
+            const elementoSecreto = document.getElementById("conteudo-secreto1");
+            const mensagemStatus = document.getElementById("mensagem-status1");
 
             if (inputUser === fraseSecreta) {
                 elementoSecreto.style.display = "block";
