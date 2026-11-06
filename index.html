@@ -72,7 +72,7 @@
     <p>Slinky é o seu melhor amigo e criador de Smile Town! 
         Divertido, engraçado e protetor, Slinky cresceu com sempre um sorriso incrível em seu rosto. 
         Porém, Slinky tem uma grande cidade, mas nenhum habitante, ele procura novos amigos a cada dia, mas sem sucesso. 
-        Infelizmente, he se encontra agora em um plano vazio, então, ele tem uma proposta pra você!
+        Infelizmente, ele se encontra agora em um plano vazio, então, ele tem uma proposta pra você!
     </p>
     
     <h3>Novo episodio desbloqueado!</h3>
@@ -94,16 +94,12 @@
         <button onclick="verificarPalavras()">Enviar</button>
         <p id="mensagem-status"></p>
 
-        <!-- IMAGEM E LINK QUE APARECEM SÓ DEPOIS DE ACERTAR -->
+        <!-- LINK COM A IMAGEM (Aparece se digitar "bem vindo") -->
         <div id="conteudo-secreto">
             <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
                 <img src="bemali.png" alt="Porta Secreta">
             </a>
-
-             <div id="conteudo-secreto1">
-            <a href="https://aurodriguez2891-glitch.github.io/ISLINK-SMILE-TOWN/PORTA.txt" target="_blank">
-                <img src="bemali.png" alt="Porta Secreta">
-            </a>       
+        </div>
     </div>
     
     <br>
@@ -111,33 +107,23 @@
 
     <script>
         function verificarPalavras() {
-            const fraseSecreta = "BEM VINDO";
             const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
             const elementoSecreto = document.getElementById("conteudo-secreto");
             const mensagemStatus = document.getElementById("mensagem-status");
 
-            if (inputUser === fraseSecreta) {
+            // Esconde a imagem por padrão antes de checar a palavra
+            elementoSecreto.style.display = "none";
+
+            if (inputUser === "bem vindo") {
+                // Mostra o link com a imagem na tela
                 elementoSecreto.style.display = "block";
                 mensagemStatus.textContent = ":)";
                 mensagemStatus.style.color = "#8f8";
+            } else if (inputUser === "porta") {
+                // Redireciona diretamente para a página secreta do site
+                window.location.href = "https://aurodriguez2891-glitch.github.io/ISLINK-SMILE-TOWN/PORTA.txt";
             } else {
-                elementoSecreto.style.display = "none";
-                mensagemStatus.textContent = ":(";
-                mensagemStatus.style.color = "#888";
-            }
-
-              function verificarPalavras() {
-            const fraseSecreta = "PORTA";
-            const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
-            const elementoSecreto = document.getElementById("conteudo-secreto1");
-            const mensagemStatus = document.getElementById("mensagem-status1");
-
-            if (inputUser === fraseSecreta) {
-                elementoSecreto.style.display = "block";
-                mensagemStatus.textContent = ":)";
-                mensagemStatus.style.color = "#8f8";
-            } else {
-                elementoSecreto.style.display = "none";
+                // Mensagem de erro caso erre a palavra
                 mensagemStatus.textContent = ":(";
                 mensagemStatus.style.color = "#888";
             }
