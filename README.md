@@ -20,3 +20,14 @@ Agora, ele não esta mais sozinho, que felicidade, né?
 Em breve, vamos ver o encontro destes!
 
 +FIM DO RECRUTAMENTO (por enquanto).
+
+06 de novembro de 2001: Ontem    da minha   , portanto, decidi tirar um tempo do trabalho, mas prometi a min mesma que hoje eu enviaria a atualização e aqui esta!
+O primeiro episódio foi alocado no site, e eu estou tão empolgada quanto qualquer um da FUNTELL para recebe-los!
+
+Atualização: O episodio está corrompido.
+Eu não sei oque CARALHOS fez o ep ficar totalmente bugado na cena da televisão, mas, sinceramente, deve ser o filtro RGB, tentarei concerta-lo antes de enviar.
+Estranhamente, parece ser um bug semelhante ao oque acontece com a aba de personagem.
+
++NOVA PAGINA DA HISTORIA.
++ABA DE APRESENTAÇÃO DE PERSONAGENS.
++PREPARAÇÃO PARA NOVO RECRUTAMENTO.
