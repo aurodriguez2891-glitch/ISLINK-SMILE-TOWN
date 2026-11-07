@@ -7,33 +7,34 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="placa (1) (1).jpg">
     <style>
-        /* O fundo começa com um tom mais claro e transita suavemente em 2 segundos */
+        /* Define a animação gradual do fundo */
+        @keyframes escurecerGradual {
+            0% {
+                background-color: #555555; /* Começa num cinza visível */
+                color: #ffffff;
+            }
+            100% {
+                background-color: #000000; /* Fica totalmente escuro (preto) */
+                color: #888888;
+            }
+        }
+
         body {
-            background-color: #222222; 
-            color: #c7c7c7;
+            background-color: #555555;
+            color: #ffffff;
             font-family: monospace;
             margin: 0;
             padding: 20px;
-            transition: background-color 2s ease;
-        }
-
-        /* Classe que o JavaScript ativa após 30 segundos */
-        body.modo-escuro {
-            background-color: #0b0b0b; /* Fundo totalmente escuro */
+            /* A animação vai durar exatamente 25 segundos e manter o estado final (forwards) */
+            animation: escurecerGradual 25s ease forwards;
         }
     </style>
 </head>
 <body>
- 
+    <h1>Nas Memórias Dela</h1>
     
-    <!-- Vídeo do YouTube corrigido para o formato /embed/ -->
+    <!-- Vídeo do YouTube incorporado -->
     <iframe width="560" height="315" src="https://www.youtube.com/embed/hTNHs2-1BlE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-    <script>
-        // Aguarda 30 segundos (30000 milissegundos) antes de escurecer o fundo
-        setTimeout(function() {
-            document.body.classList.add('modo-escuro');
-        }, 30000);
-    </script>
 </body>
 </html>
