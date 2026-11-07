@@ -13,6 +13,11 @@
             font-family: monospace;
             margin: 0;
             padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 25px;
         }
 
         .bloco-secreto {
@@ -56,7 +61,6 @@
             cursor: pointer;
         }
 
-        /* Estilo para a nova mensagem de texto secreta */
         #texto-secreto {
             display: none;
             margin-top: 15px;
@@ -75,7 +79,8 @@
 <body>
     <h1>FINALMENTE O SHOW COMEÇOU DE VERDADE!</h1>
  
-    <iframe width="1060" height="615" src="https://www.youtube.com/watch?v=xvzItiyFU7o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- O link agora usa obrigatoriamente /embed/ para o YouTube aceitar a incorporação -->
+    <iframe width="1060" height="615" src="https://www.youtube.com/embed/xvzItiyFU7o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 </body>
 </html>
