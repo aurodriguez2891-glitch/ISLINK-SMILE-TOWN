@@ -28,6 +28,9 @@ Atualização: O episodio está corrompido.
 Eu não sei oque CARALHOS fez o ep ficar totalmente bugado na cena da televisão, mas, sinceramente, deve ser o filtro RGB, tentarei concerta-lo antes de enviar.
 Estranhamente, parece ser um bug semelhante ao oque acontece com a aba de personagem.
 
+873 116 2084
+
 +NOVA PAGINA DA HISTORIA.
 +ABA DE APRESENTAÇÃO DE PERSONAGENS.
 +PREPARAÇÃO PARA NOVO RECRUTAMENTO.
+
