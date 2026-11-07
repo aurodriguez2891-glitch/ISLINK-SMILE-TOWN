@@ -4,37 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nas Memórias Dela</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="placa (1) (1).jpg">
     <style>
-        /* O fundo começa com a cor normal e tem uma transição suave de 2 segundos */
+        /* O fundo começa com um tom mais claro e transita suavemente em 2 segundos */
         body {
-            background-color: #ffffff; /* Põe aqui a cor inicial que preferires */
-            color: #000000;            /* Cor do texto inicial */
+            background-color: #222222; 
+            color: #c7c7c7;
             font-family: monospace;
             margin: 0;
             padding: 20px;
-            transition: background-color 2s ease, color 2s ease;
+            transition: background-color 2s ease;
         }
 
-        /* Classe que será aplicada pelo JavaScript após 30 segundos */
+        /* Classe que o JavaScript ativa após 30 segundos */
         body.modo-escuro {
-            background-color: #0b0b0b; /* Fundo escuro */
-            color: #c7c7c7;            /* Texto adaptado para o escuro */
+            background-color: #0b0b0b; /* Fundo totalmente escuro */
         }
     </style>
 </head>
 <body>
-
-    <h1>Acompanha a investigação...</h1>
-    <p>Algo vai mudar daqui a 30 segundos.</p>
+    <h1>Nas Memórias Dela</h1>
+    
+    <!-- Vídeo do YouTube corrigido para o formato /embed/ -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hTNHs2-1BlE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
     <script>
-        // setTimeout espera o tempo em milissegundos (30000 ms = 30 segundos)
+        // Aguarda 30 segundos (30000 milissegundos) antes de escurecer o fundo
         setTimeout(function() {
-            // Adiciona a classe "modo-escuro" à tag <body>
             document.body.classList.add('modo-escuro');
-            console.p("A luz apagou-se."); // Opcional: log para testar
-        }, 30000); // 30000 milissegundos = 30 segundos
+        }, 30000);
     </script>
-
 </body>
 </html>
