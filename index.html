@@ -73,82 +73,9 @@
     </style>
 </head>
 <body>
-    <img src="SLINKYTOWN.png" alt="Logo ou Destaque" class="imagem-topo">
-    
-    <h1>SORRIA, ISLINKY!</h1>
-    
-    <h3>Quem é Slinky?</h3>
-    <p>Slinky é o seu melhor amigo e criador de Smile Town! 
-        Divertido, engraçado e protetor, Slinky cresceu com sempre um sorriso incrível em seu rosto. 
-        Porém, Slinky tem uma grande cidade, mas nenhum habitante, ele procura novos amigos a cada dia, mas sem sucesso. 
-        Infelizmente, ele se encontra agora em um plano vazio, então, ele tem uma proposta pra você!
-    </p>
-    
-    <h3>Novo episodio desbloqueado!</h3>
-    
-    <img src="bem-vindo.png" alt="Bem-vindo!">
+    <h1>FINALMENTE O SHOW COMEÇOU DE VERDADE!</h1>
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/xvzItiyFU7o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="1060" height="615" src="https://youtu.be/hTNHs2-1BlE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-    <h1>MORAL DA HISTORIA:</h1>
-    <p>Quem entrou dentro do quarto?</p>
-
-    <h3>Perdido e não sabe pra onde ir? MELEIA. My Dear!</h3>
-
-    <div class="barra-personagens"></div>
-
-    <p><a href="amigos.html" target="_blank" style="color: #ff3b3b;">Novos amigos!</a></p>
-
-    <!-- BLOCO SECRETO INTEGRADO NO FLUXO DA PÁGINA -->
-    <div class="bloco-secreto">
-        <input type="text" id="inputPalavras" placeholder="...">
-        <button onclick="verificarPalavras()">Enviar</button>
-        <p id="mensagem-status"></p>
-
-        <!-- LINK COM A IMAGEM (Aparece se digitar "bem vindo") -->
-        <div id="conteudo-secreto">
-            <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
-                <img src="bemali.png" alt="Porta Secreta">
-            </a>
-        </div>
-
-        <!-- TEXTO SECRETO (Aparece se digitar "tentar novamente") -->
-        <div id="texto-secreto">
-            <p>1134 79 87</p>
-        </div>
-    </div>
-    
-    <br>
-    <img src="FUNTELL-removebg-preview (1).png" alt="Funtell">
-
-    <script>
-        function verificarPalavras() {
-            const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
-            const elementoSecreto = document.getElementById("conteudo-secreto");
-            const textoSecreto = document.getElementById("texto-secreto");
-            const mensagemStatus = document.getElementById("mensagem-status");
-
-            // Esconde todos os conteúdos secretos por padrão antes de checar a nova palavra
-            elementoSecreto.style.display = "none";
-            textoSecreto.style.display = "none";
-
-            if (inputUser === "bem vindo") {
-                // Mostra o link com a imagem na tela
-                elementoSecreto.style.display = "block";
-                mensagemStatus.textContent = ":)";
-                mensagemStatus.style.color = "#8f8";
-            } else if (inputUser === "porta") {
-                // Redireciona diretamente para a página secreta do site
-                window.location.href = "https://aurodriguez2891-glitch.github.io/ISLINK-SMILE-TOWN/PORTA.txt";
-            } else if (inputUser === "tentar novamente") {
-                // Mostra o texto secreto na tela
-                textoSecreto.style.display = "block";
-                mensagemStatus.textContent = ":|";
-                mensagemStatus.style.color = "#ff5555";
-            } else {
-                // Mensagem de erro caso erre a palavra
-                mensagemStatus.textContent = ":(";
-                mensagemStatus.style.color = "#888";
-            }
-        }
-    </script>
 </body>
 </html>
