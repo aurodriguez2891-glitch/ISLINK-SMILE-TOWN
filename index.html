@@ -81,6 +81,67 @@
  
     <!-- Link corrigido obrigatoriamente para o formato /embed/ -->
     <iframe width="1060" height="615" src="https://www.youtube.com/embed/AmZhiPSdrdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="bloco-secreto">
+        <input type="text" id="inputPalavras" placeholder="...">
+        <button onclick="verificarPalavras()">Enviar</button>
+        <p id="mensagem-status"></p>
 
+        <!-- LINK COM A IMAGEM (Aparece se digitar "bem vindo") -->
+        <div id="conteudo-secreto">
+            <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
+                <img src="bemali.png" alt="Porta Secreta">
+            </a>
+        </div>
+
+<div class="bloco-secreto">
+        <input type="text" id="inputPalavras" placeholder="...">
+        <button onclick="verificarPalavras()">Enviar</button>
+        <p id="mensagem-status"></p>
+
+        <!-- LINK COM A IMAGEM (Aparece se digitar "bem vindo") -->
+        <div id="conteudo-secreto">
+            <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
+                <img src="bemali.png" alt="Porta Secreta">
+            </a>
+        </div>
+
+        <!-- TEXTO SECRETO (Aparece se digitar "tentar novamente") -->
+        <div id="texto-secreto">
+            <p>1134 79 87</p>
+        </div>
+    </div>
+
+
+    <script>
+        function verificarPalavras() {
+            const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
+            const elementoSecreto = document.getElementById("conteudo-secreto");
+            const textoSecreto = document.getElementById("texto-secreto");
+            const mensagemStatus = document.getElementById("mensagem-status");
+
+            // Esconde todos os conteúdos secretos por padrão antes de checar a nova palavra
+            elementoSecreto.style.display = "none";
+            textoSecreto.style.display = "none";
+
+            if (inputUser === "bem vindo") {
+                // Mostra o link com a imagem na tela
+                elementoSecreto.style.display = "block";
+                mensagemStatus.textContent = ":)";
+                mensagemStatus.style.color = "#8f8";
+            } else if (inputUser === "porta") {
+                // Redireciona diretamente para a página secreta do site
+                window.location.href = "https://aurodriguez2891-glitch.github.io/ISLINK-SMILE-TOWN/PORTA.txt";
+            } else if (inputUser === "tentar novamente") {
+                // Mostra o texto secreto na tela
+                textoSecreto.style.display = "block";
+                mensagemStatus.textContent = ":|";
+                mensagemStatus.style.color = "#ff5555";
+            } else {
+                // Mensagem de erro caso erre a palavra
+                mensagemStatus.textContent = ":(";
+                mensagemStatus.style.color = "#888";
+            }
+        }
+    </script>
 </body>
 </html>
