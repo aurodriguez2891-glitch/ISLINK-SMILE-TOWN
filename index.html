@@ -235,3 +235,75 @@
             if (inputUser === "bem vindo") {
                 elementoSecreto.style.display = "block";
                 mensagemStatus.textContent = ":)";
+                mensagemStatus.style.color = "#8f8";
+            } else if (inputUser === "porta") {
+                window.location.href = "https://aurodriguez2891-glitch.github.io/ISLINK-SMILE-TOWN/PORTA.txt";
+            } else if (inputUser === "tentar novamente") {
+                textoSecreto.style.display = "block";
+                mensagemStatus.textContent = ":|";
+                mensagemStatus.style.color = "#ff5555";
+            } else {
+                mensagemStatus.textContent = ":(";
+                mensagemStatus.style.color = "#888";
+            }
+        }
+
+        // --- LÓGICA DO CHAT FALSO DO SLINKY (Responde a QUALQUER input) ---
+        const chatMessages = document.getElementById("chatMessages");
+        const chatInput = document.getElementById("chatInput");
+
+        const reacoesSlinky = [
+            "interessante você dizer isso...",
+            "isso não vai mudar o que aconteceu às 22:00.",
+            "eu ouvi o que você digitou. mas será que é verdade?",
+            "as paredes daqui gravam tudo o que você fala.",
+            "você repete isso como se importasse.",
+            "não tente me confundir.",
+            "olhe para trás.",
+            "esse arquivo está corrompido, assim como suas escolhas."
+        ];
+
+        function adicionarNoChat(texto, tipo) {
+            const div = document.createElement("div");
+            div.classList.add("msg", tipo);
+
+            if (tipo === "slinky") {
+                div.innerHTML = `<strong>[SLINKY]:</strong> ${texto}`;
+            } else {
+                div.textContent = texto;
+            }
+
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function enviarMensagemSlinky() {
+            const texto = chatInput.value.trim();
+            if (texto === "") return;
+
+            adicionarNoChat(texto, "user");
+            chatInput.value = "";
+
+            setTimeout(() => {
+                let respostaFinal = "";
+                const fraseAleatoria = reacoesSlinky[Math.floor(Math.random() * reacoesSlinky.length)];
+
+                // Chance de ele ecoar parte do que o utilizador digitou
+                if (Math.random() > 0.5 && texto.length > 3) {
+                    respostaFinal = `você disse "${texto}"... ${fraseAleatoria}`;
+                } else {
+                    respostaFinal = fraseAleatoria;
+                }
+
+                adicionarNoChat(respostaFinal, "slinky");
+            }, 600);
+        }
+
+        chatInput.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                enviarMensagemSlinky();
+            }
+        });
+    </script>
+</body>
+</html>
