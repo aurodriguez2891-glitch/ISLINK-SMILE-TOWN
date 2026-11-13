@@ -16,27 +16,8 @@
             text-align: center;
         }
 
-        h1 {
-            margin-bottom: 25px;
-        }
-
-        iframe {
-            max-width: 100%;
-        }
-
-        .container-interativo {
-            max-width: 1060px;
-            margin: 30px auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 30px;
-        }
-
         .bloco-secreto {
-            flex: 1;
-            min-width: 300px;
+            margin: 30px 0;
             text-align: left;
         }
 
@@ -46,7 +27,7 @@
             background: transparent;
             border: 1px solid #666;
             color: #fff;
-            width: 260px;
+            width: 320px;
             max-width: 100%;
             margin-right: 8px;
             font-family: monospace;
@@ -77,6 +58,7 @@
             cursor: pointer;
         }
 
+        /* Estilo para a nova mensagem de texto secreta */
         #texto-secreto {
             display: none;
             margin-top: 15px;
@@ -93,13 +75,14 @@
 
         /* --- ESTILOS DO CHAT DO SLINKY --- */
         .chat-slinky-box {
-            width: 380px;
+            width: 400px;
             max-width: 100%;
             background: #111111;
             border: 1px solid #444;
             text-align: left;
             display: flex;
             flex-direction: column;
+            margin: 30px 0;
         }
 
         .chat-header {
@@ -183,43 +166,63 @@
     </style>
 </head>
 <body>
-    <h1>22:00</h1>
- 
-    <!-- Vídeo principal -->
-    <iframe width="1060" height="615" src="https://www.youtube.com/embed/AmZhiPSdrdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <img src="SLINKYTOWN.png" alt="Logo ou Destaque" class="imagem-topo">
+    
+    <h1>SORRIA, ISLINKY!</h1>
+    
+    <h3>Quem é Slinky?</h3>
+    <p>Slinky é o seu melhor amigo e criador de Smile Town! 
+        Divertido, engraçado e protetor, Slinky cresceu com sempre um sorriso incrível em seu rosto. 
+        Porém, Slinky tem uma grande cidade, mas nenhum habitante, ele procura novos amigos a cada dia, mas sem sucesso. 
+        Infelizmente, ele se encontra agora em um plano vazio, então, ele tem uma proposta pra você!
+    </p>
+    
+    <h3>Novo episodio desbloqueado!</h3>
+    
+    <img src="bem-vindo.png" alt="Bem-vindo!">
 
-    <div class="container-interativo">
-        <!-- BLOCO DE SENHAS / PALAVRAS SECRETAS -->
-        <div class="bloco-secreto">
-            <input type="text" id="inputPalavras" placeholder="...">
-            <button onclick="verificarPalavras()">Enviar</button>
-            <p id="mensagem-status"></p>
+    <h1>MORAL DA HISTORIA:</h1>
+    <p>Quem entrou dentro do quarto?</p>
 
-            <!-- LINK COM A IMAGEM (Aparece se digitar "bem vindo") -->
-            <div id="conteudo-secreto">
-                <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
-                    <img src="bemali.png" alt="Porta Secreta">
-                </a>
-            </div>
+    <h3>Perdido e não sabe pra onde ir? MELEIA. My Dear!</h3>
 
-            <!-- TEXTO SECRETO (Aparece se digitar "tentar novamente") -->
-            <div id="texto-secreto">
-                <p>1134 79 87</p>
-            </div>
+    <div class="barra-personagens"></div>
+
+    <p><a href="amigos.html" target="_blank" style="color: #ff3b3b;">Novos amigos!</a></p>
+
+    <!-- BLOCO SECRETO INTEGRADO NO FLUXO DA PÁGINA -->
+    <div class="bloco-secreto">
+        <input type="text" id="inputPalavras" placeholder="...">
+        <button onclick="verificarPalavras()">Enviar</button>
+        <p id="mensagem-status"></p>
+
+        <!-- LINK COM A IMAGEM (Aparece se digitar "bem vindo") -->
+        <div id="conteudo-secreto">
+            <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
+                <img src="bemali.png" alt="Porta Secreta">
+            </a>
         </div>
 
-        <!-- CHAT DO SLINKY -->
-        <div class="chat-slinky-box">
-            <div class="chat-header">CONEXÃO: SLINKY</div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="msg slinky"><strong>[SLINKY]:</strong> ...você ainda está aí?</div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" id="chatInput" placeholder="fale com ele..." autocomplete="off">
-                <button onclick="enviarMensagemSlinky()">></button>
-            </div>
+        <!-- TEXTO SECRETO (Aparece se digitar "tentar novamente") -->
+        <div id="texto-secreto">
+            <p>1134 79 87</p>
         </div>
     </div>
+
+    <!-- CHAT DO SLINKY INTEGRADO -->
+    <div class="chat-slinky-box">
+        <div class="chat-header">CONEXÃO: SLINKY</div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="msg slinky"><strong>[SLINKY]:</strong> ...você ainda está aí?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="fale com ele..." autocomplete="off">
+            <button onclick="enviarMensagemSlinky()">></button>
+        </div>
+    </div>
+    
+    <br>
+    <img src="FUNTELL-removebg-preview (1).png" alt="Funtell">
 
     <script>
         // --- LÓGICA DAS PALAVRAS SECRETAS ---
@@ -229,20 +232,25 @@
             const textoSecreto = document.getElementById("texto-secreto");
             const mensagemStatus = document.getElementById("mensagem-status");
 
+            // Esconde todos os conteúdos secretos por padrão antes de checar a nova palavra
             elementoSecreto.style.display = "none";
             textoSecreto.style.display = "none";
 
             if (inputUser === "bem vindo") {
+                // Mostra o link com a imagem na tela
                 elementoSecreto.style.display = "block";
                 mensagemStatus.textContent = ":)";
                 mensagemStatus.style.color = "#8f8";
             } else if (inputUser === "porta") {
+                // Redireciona diretamente para a página secreta do site
                 window.location.href = "https://aurodriguez2891-glitch.github.io/ISLINK-SMILE-TOWN/PORTA.txt";
             } else if (inputUser === "tentar novamente") {
+                // Mostra o texto secreto na tela
                 textoSecreto.style.display = "block";
                 mensagemStatus.textContent = ":|";
                 mensagemStatus.style.color = "#ff5555";
             } else {
+                // Mensagem de erro caso erre a palavra
                 mensagemStatus.textContent = ":(";
                 mensagemStatus.style.color = "#888";
             }
