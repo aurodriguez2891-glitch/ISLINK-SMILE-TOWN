@@ -20,8 +20,23 @@
             margin-bottom: 25px;
         }
 
+        iframe {
+            max-width: 100%;
+        }
+
+        .container-interativo {
+            max-width: 1060px;
+            margin: 30px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
         .bloco-secreto {
-            margin: 30px 0;
+            flex: 1;
+            min-width: 300px;
             text-align: left;
         }
 
@@ -31,9 +46,10 @@
             background: transparent;
             border: 1px solid #666;
             color: #fff;
-            width: 320px;
+            width: 260px;
             max-width: 100%;
             margin-right: 8px;
+            font-family: monospace;
         }
 
         .bloco-secreto button {
@@ -74,74 +90,148 @@
             margin-top: 8px;
             color: #888;
         }
+
+        /* --- ESTILOS DO CHAT DO SLINKY --- */
+        .chat-slinky-box {
+            width: 380px;
+            max-width: 100%;
+            background: #111111;
+            border: 1px solid #444;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background: #1a1a1a;
+            color: #e0e0e0;
+            padding: 10px 14px;
+            border-bottom: 1px solid #444;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .chat-messages {
+            height: 240px;
+            padding: 12px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .msg {
+            padding: 8px 10px;
+            border: 1px solid #333;
+            max-width: 85%;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .msg.user {
+            align-self: flex-end;
+            background: #1c1c1c;
+            color: #ffffff;
+            border-color: #666;
+        }
+
+        .msg.slinky {
+            align-self: flex-start;
+            background: #0b0b0b;
+            color: #a3a3a3;
+            border-color: #333;
+        }
+
+        .msg.slinky strong {
+            color: #ff5555;
+            font-weight: normal;
+        }
+
+        .chat-input-area {
+            display: flex;
+            border-top: 1px solid #444;
+            background: #0b0b0b;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: monospace;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .chat-input-area button {
+            padding: 10px 14px;
+            background: #222;
+            color: #c7c7c7;
+            border: none;
+            border-left: 1px solid #444;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        .chat-input-area button:hover {
+            background: #333;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <h1>22:00</h1>
  
-    <!-- Link corrigido obrigatoriamente para o formato /embed/ -->
+    <!-- Vídeo principal -->
     <iframe width="1060" height="615" src="https://www.youtube.com/embed/AmZhiPSdrdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<div class="bloco-secreto">
-        <input type="text" id="inputPalavras" placeholder="...">
-        <button onclick="verificarPalavras()">Enviar</button>
-        <p id="mensagem-status"></p>
 
-        <!-- LINK COM A IMAGEM (Aparece se digitar "bem vindo") -->
-        <div id="conteudo-secreto">
-            <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
-                <img src="bemali.png" alt="Porta Secreta">
-            </a>
+    <div class="container-interativo">
+        <!-- BLOCO DE SENHAS / PALAVRAS SECRETAS -->
+        <div class="bloco-secreto">
+            <input type="text" id="inputPalavras" placeholder="...">
+            <button onclick="verificarPalavras()">Enviar</button>
+            <p id="mensagem-status"></p>
+
+            <!-- LINK COM A IMAGEM (Aparece se digitar "bem vindo") -->
+            <div id="conteudo-secreto">
+                <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
+                    <img src="bemali.png" alt="Porta Secreta">
+                </a>
+            </div>
+
+            <!-- TEXTO SECRETO (Aparece se digitar "tentar novamente") -->
+            <div id="texto-secreto">
+                <p>1134 79 87</p>
+            </div>
         </div>
 
-<div class="bloco-secreto">
-        <input type="text" id="inputPalavras" placeholder="...">
-        <button onclick="verificarPalavras()">Enviar</button>
-        <p id="mensagem-status"></p>
-
-        <!-- LINK COM A IMAGEM (Aparece se digitar "bem vindo") -->
-        <div id="conteudo-secreto">
-            <a href="https://youtu.be/XcQyjXF4ihU" target="_blank">
-                <img src="bemali.png" alt="Porta Secreta">
-            </a>
-        </div>
-
-        <!-- TEXTO SECRETO (Aparece se digitar "tentar novamente") -->
-        <div id="texto-secreto">
-            <p>1134 79 87</p>
+        <!-- CHAT DO SLINKY -->
+        <div class="chat-slinky-box">
+            <div class="chat-header">CONEXÃO: SLINKY</div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="msg slinky"><strong>[SLINKY]:</strong> ...você ainda está aí?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="fale com ele..." autocomplete="off">
+                <button onclick="enviarMensagemSlinky()">></button>
+            </div>
         </div>
     </div>
 
-
     <script>
+        // --- LÓGICA DAS PALAVRAS SECRETAS ---
         function verificarPalavras() {
             const inputUser = document.getElementById("inputPalavras").value.trim().toLowerCase();
             const elementoSecreto = document.getElementById("conteudo-secreto");
             const textoSecreto = document.getElementById("texto-secreto");
             const mensagemStatus = document.getElementById("mensagem-status");
 
-            // Esconde todos os conteúdos secretos por padrão antes de checar a nova palavra
             elementoSecreto.style.display = "none";
             textoSecreto.style.display = "none";
 
             if (inputUser === "bem vindo") {
-                // Mostra o link com a imagem na tela
                 elementoSecreto.style.display = "block";
                 mensagemStatus.textContent = ":)";
-                mensagemStatus.style.color = "#8f8";
-            } else if (inputUser === "porta") {
-                // Redireciona diretamente para a página secreta do site
-                window.location.href = "https://aurodriguez2891-glitch.github.io/ISLINK-SMILE-TOWN/PORTA.txt";
-            } else if (inputUser === "tentar novamente") {
-                // Mostra o texto secreto na tela
-                textoSecreto.style.display = "block";
-                mensagemStatus.textContent = ":|";
-                mensagemStatus.style.color = "#ff5555";
-            } else {
-                // Mensagem de erro caso erre a palavra
-                mensagemStatus.textContent = ":(";
-                mensagemStatus.style.color = "#888";
-            }
-        }
-    </script>
-</body>
-</html>
