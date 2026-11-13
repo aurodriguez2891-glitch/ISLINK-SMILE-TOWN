@@ -13,7 +13,6 @@
             font-family: monospace;
             margin: 0;
             padding: 20px;
-            text-align: center;
         }
 
         .bloco-secreto {
@@ -30,7 +29,6 @@
             width: 320px;
             max-width: 100%;
             margin-right: 8px;
-            font-family: monospace;
         }
 
         .bloco-secreto button {
@@ -131,6 +129,11 @@
             font-weight: normal;
         }
 
+        .msg.slinky a {
+            color: #38bdf8;
+            word-break: break-all;
+        }
+
         .chat-input-area {
             display: flex;
             border-top: 1px solid #444;
@@ -213,7 +216,7 @@
     <div class="chat-slinky-box">
         <div class="chat-header">CONEXÃO: SLINKY</div>
         <div class="chat-messages" id="chatMessages">
-            <div class="msg slinky"><strong>[SLINKY]:</strong>...</div>
+            <div class="msg slinky"><strong>[SLINKY]:</strong> ...você ainda está aí?</div>
         </div>
         <div class="chat-input-area">
             <input type="text" id="chatInput" placeholder="fale com ele..." autocomplete="off">
@@ -232,51 +235,50 @@
             const textoSecreto = document.getElementById("texto-secreto");
             const mensagemStatus = document.getElementById("mensagem-status");
 
-            // Esconde todos os conteúdos secretos por padrão antes de checar a nova palavra
             elementoSecreto.style.display = "none";
             textoSecreto.style.display = "none";
 
             if (inputUser === "bem vindo") {
-                // Mostra o link com a imagem na tela
                 elementoSecreto.style.display = "block";
                 mensagemStatus.textContent = ":)";
                 mensagemStatus.style.color = "#8f8";
             } else if (inputUser === "porta") {
-                // Redireciona diretamente para a página secreta do site
                 window.location.href = "https://aurodriguez2891-glitch.github.io/ISLINK-SMILE-TOWN/PORTA.txt";
             } else if (inputUser === "tentar novamente") {
-                // Mostra o texto secreto na tela
                 textoSecreto.style.display = "block";
                 mensagemStatus.textContent = ":|";
                 mensagemStatus.style.color = "#ff5555";
             } else {
-                // Mensagem de erro caso erre a palavra
                 mensagemStatus.textContent = ":(";
                 mensagemStatus.style.color = "#888";
             }
         }
 
-        // --- LÓGICA DO CHAT FALSO DO SLINKY (Responde a QUALQUER input) ---
+        // --- LÓGICA DO CHAT FALSO DO SLINKY ---
         const chatMessages = document.getElementById("chatMessages");
         const chatInput = document.getElementById("chatInput");
 
         const reacoesSlinky = [
-            "uh oh, Que pena! Slinky não esta disponivel agora :(",
-            "uh oh, Que pena! Slinky não esta disponivel agora :(",
-            "uh oh, Que pena! Slinky não esta disponivel agora :(",
+            "interessante você dizer isso...",
+            "isso não vai mudar o que aconteceu às 22:00.",
+            "eu ouvi o que você digitou. mas será que é verdade?",
             "as paredes daqui gravam tudo o que você fala.",
-            "uh oh, Que pena! Slinky não esta disponivel agora :(",
-            "uh oh, Que pena! Slinky não esta disponivel agora :(",
+            "você repete isso como se importasse.",
+            "não tente me confundir.",
             "olhe para trás.",
             "esse arquivo está corrompido, assim como suas escolhas."
         ];
 
-        function adicionarNoChat(texto, tipo) {
+        function adicionarNoChat(texto, tipo, ehLink = false) {
             const div = document.createElement("div");
             div.classList.add("msg", tipo);
 
             if (tipo === "slinky") {
-                div.innerHTML = `<strong>[SLINKY]:</strong> ${texto}`;
+                if (ehLink) {
+                    div.innerHTML = `<strong>[SLINKY]:</strong> <a href="${texto}" target="_blank">${texto}</a>`;
+                } else {
+                    div.innerHTML = `<strong>[SLINKY]:</strong> ${texto}`;
+                }
             } else {
                 div.textContent = texto;
             }
@@ -286,24 +288,33 @@
         }
 
         function enviarMensagemSlinky() {
-            const texto = chatInput.value.trim();
-            if (texto === "") return;
+            const textoOriginal = chatInput.value.trim();
+            if (textoOriginal === "") return;
 
-            adicionarNoChat(texto, "user");
+            adicionarNoChat(textoOriginal, "user");
             chatInput.value = "";
 
             setTimeout(() => {
                 let respostaFinal = "";
-                const fraseAleatoria = reacoesSlinky[Math.floor(Math.random() * reacoesSlinky.length)];
+                let ehLink = false;
+                const textoMinusculo = textoOriginal.toLowerCase();
 
-                // Chance de ele ecoar parte do que o utilizador digitou
-                if (Math.random() > 0.5 && texto.length > 3) {
-                    respostaFinal = `você disse "${texto}"... ${fraseAleatoria}`;
+                // REGRA ESPECIAL: Se o utilizador mandar "come here"
+                if (textoMinusculo === "come here") {
+                    respostaFinal = "https://youtu.be/LTtW-tskfsA";
+                    ehLink = true;
                 } else {
-                    respostaFinal = fraseAleatoria;
+                    // Comportamento normal (responde a qualquer outra coisa)
+                    const fraseAleatoria = reacoesSlinky[Math.floor(Math.random() * reacoesSlinky.length)];
+
+                    if (Math.random() > 0.5 && textoOriginal.length > 3) {
+                        respostaFinal = `você disse "${textoOriginal}"... ${fraseAleatoria}`;
+                    } else {
+                        respostaFinal = fraseAleatoria;
+                    }
                 }
 
-                adicionarNoChat(respostaFinal, "slinky");
+                adicionarNoChat(respostaFinal, "slinky", ehLink);
             }, 600);
         }
 
