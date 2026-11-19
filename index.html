@@ -299,7 +299,7 @@
                 const textoMinusculo = textoOriginal.toLowerCase();
 
                 // REGRA ESPECIAL: Se o utilizador mandar "come here"
-                if (textoMinusculo === "Come here!") {
+                if (textoMinusculo === "come here") {
                     respostaFinal = "https://drive.google.com/drive/u/1/folders/121S8vDKGGHOVF2ol8RNCsgU8pVj0vOme";
                     ehLink = true;
                 } else {
@@ -307,7 +307,7 @@
                     const fraseAleatoria = reacoesSlinky[Math.floor(Math.random() * reacoesSlinky.length)];
 
                     if (Math.random() > 0.5 && textoOriginal.length > 3) {
-                        respostaFinal = `você disse "${textoOriginal}"... ${fraseAleatoria}`;
+                        respostaFinal = `"${textoOriginal}"... ${fraseAleatoria}`;
                     } else {
                         respostaFinal = fraseAleatoria;
                     }
