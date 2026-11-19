@@ -298,8 +298,8 @@
                 let ehLink = false;
                 const textoMinusculo = textoOriginal.toLowerCase();
 
-                // REGRA ESPECIAL: Se o utilizador mandar "come here"
-                if (textoMinusculo === "come here") {
+                // REGRA ESPECIAL: Se o utilizador mandar "Come here!" ou "come here"
+                if (textoMinusculo === "come here!" || textoMinusculo === "come here") {
                     respostaFinal = "https://drive.google.com/drive/u/1/folders/121S8vDKGGHOVF2ol8RNCsgU8pVj0vOme";
                     ehLink = true;
                 } else {
